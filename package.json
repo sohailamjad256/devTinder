@@ -1,0 +1,14 @@
+{
+  "name": "sohail-dev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "author": "sohail",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
