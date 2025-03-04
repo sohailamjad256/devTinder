@@ -1,30 +1,29 @@
 const express =  require("express")
 
 const app = express()
-
-const {adminAuth, userAuth} = require('./middlewares/auth')
+const connectDB = require("./config/database")
+const User = require('./models/user')
+app.use(express.json())
 //handling auth middle ware for all GET, Post,... requests
-app.use('/admin',adminAuth)
 
-app.get('/user',userAuth, (req,res)=>{
-    res.send('check user data')
+ app.post('/signUp', async (req,res)=>{
+    console.log(req.body);
+    // Creating a new instance of the user model.
+    const user = new User(req.body)
+
+   await user.save()
+    res.send('data added succesfully')
+ })
+
+connectDB()
+.then(()=>{
+    console.log('database connection established');
+    app.listen(3000, ()=>{
+        console.log('server is listening on 3000');
+        
+    })
+})
+.catch((err)=>{
+    console.error("database cannot be connected")
 })
 
-app.post('/login/user',(req,res)=>{
-    res.send('User logged in successfully')
-})
-
-app.get('/admin/getUserData',(req,res)=>{
-    res.send('data is sent')
-});
-
-app.get('/admin/delete',(req,res)=>{
-    res.send('delete a user')
-})
-
-
-
-app.listen(3000, ()=>{
-    console.log('server is listening on 3000');
-    
-})
