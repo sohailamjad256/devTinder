@@ -1,0 +1,7 @@
+- Explore the mongoose Documentation for Model methods
+- what are the options in a Model.findOneAndUpdate method, Explore more about it.
+- API- Update the user data using Email Id.
+- Add Api level validation on patch request and Signup request
+-Install validators and explore validators lib
+- Add data base level valid email id or not and photo url as well , password
+-Never TRUSt req.body
