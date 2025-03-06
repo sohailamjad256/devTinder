@@ -53,9 +53,9 @@ const userSchema = mongoose.Schema({
         type:String,
         default:'',
         validate(value){
-         if(!validator.isURL(value)){
-            throw new Error
-         }
+        //  if(!validator.isURL(value)){
+        //     throw new Error
+        //  }
         }
     },
     skills:[String]
