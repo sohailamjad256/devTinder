@@ -5,3 +5,10 @@
 -Install validators and explore validators lib
 - Add data base level valid email id or not and photo url as well , password
 -Never TRUSt req.body
+
+-Install cookie-parser
+-just send a dummy user to cookie
+- create GET/profile Api and check if you get the cookie back
+- Install jsonwebtoken
+- IN login API, after email and password validations, creates a JWT token and send it to user in cookies
+- read the cookies inside your profile API and find the logged in user
